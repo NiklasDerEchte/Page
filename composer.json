@@ -1,6 +1,8 @@
 {
     "name": "niklas/page",
     "description": "HTML renderer",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "NiklasDerEchte",
@@ -13,5 +15,6 @@
             "Niklas\\Test\\": "test/"
         }
     },
+    "minimum-stability": "dev",
     "require": {}
 }
