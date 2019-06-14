@@ -1,0 +1,17 @@
+{
+    "name": "niklas/page",
+    "description": "HTML renderer",
+    "authors": [
+        {
+            "name": "NiklasDerEchte",
+            "email": "nikwo97@aim.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Niklas\\": "src/",
+            "Niklas\\Test\\": "test/"
+        }
+    },
+    "require": {}
+}
