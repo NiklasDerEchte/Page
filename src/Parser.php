@@ -36,9 +36,18 @@ class Parser
         return $this;
     }
 
+    public function raw($html) :self {
+        $this->mContent = str_replace($this->mContentFlag, $html, $this->mContent);
+        return $this;
+    }
+
     public function properties($properties):self {
         $this->mNode->properties = $properties;
         return $this;
+    }
+
+    public function getContent(): String {
+        return $this->mContent;
     }
 
     public function text($message):self {
