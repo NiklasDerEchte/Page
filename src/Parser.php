@@ -8,8 +8,8 @@ class Parser
     private $mContentFlag;
     private $mNode;
 
-    public function __construct($content = "{{CONTENT}}") {
-        $this->mContentFlag = "{{CONTENT}}";
+    public function __construct($content = "{{CONTENT}}", $mContentFlag = "{{CONTENT}}") {
+        $this->mContentFlag = $mContentFlag;
         $this->mContent = $content;
         $this->mNode = new Node();
     }
@@ -46,7 +46,7 @@ class Parser
         return $this;
     }
 
-    public function getContent(): String {
+    public function getTemplate(): String {
         return $this->mContent;
     }
 

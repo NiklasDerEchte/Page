@@ -8,12 +8,24 @@ class Page
 {
     private static $INSTANCE = null;
     private $mTemplate;
-    public function __construct($tmp) {
+    private $mContentFlag;
+    private $mParser;
+
+    public function __construct($tmp, $contentFlag = "{{CONTENT}}") {
         $this->mTemplate = $tmp;
+        $this->mContentFlag = $contentFlag;
+        $this->mParser = new Parser();
+    }
+
+    public function add($tmp) {
+        if($this->mParser !== null && $this->mParser instanceof Parser) {
+            $this->mParser->raw($tmp);
+            $this->mTemplate = $this->mParser->getTemplate();
+        }
     }
 
     public function parser():Parser {
-        return new Parser($this->mTemplate);
+        return $this->mParser = new Parser($this->mTemplate, $this->mContentFlag);
     }
 
     public static function INIT(self $instance) {
