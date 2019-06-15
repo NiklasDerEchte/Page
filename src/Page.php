@@ -11,7 +11,7 @@ class Page
     private $mContentFlag;
     private $mParser;
 
-    public function __construct($tmp, $contentFlag = "{{CONTENT}}") {
+    public function __construct($tmp = "{{CONTENT}}", $contentFlag = "{{CONTENT}}") {
         $this->mTemplate = $tmp;
         $this->mContentFlag = $contentFlag;
         $this->mParser = new Parser();
